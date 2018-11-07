@@ -70,7 +70,7 @@ def test_cached(app):
 
     with mock.patch.object(c._backend, 'get', return_value=100) as mocked:
         incr2(10)
-        mocked.assert_called_once_with('testkey')
+        mocked.assert_called_once_with('testkey.v0')
 
     with pytest.raises(AttributeError):
         c.nosuchmethod()
